@@ -1,0 +1,16 @@
+import random
+def play():
+    user = input("가위,바위,보 중 하나를 적어주세요")
+    computer = random.choice(['가위','바위','보'])
+    if user == computer:
+        return '비겼습니다'
+    
+    if win(user, computer):
+        return "승리하셨습니다"
+        
+    return "패배하셨습니다"
+
+def win(player, opponent):
+    if (player == '바위' and opponent == '가위') or (player == '가위' and opponent =='보') or (player == '보' and opponent == '바위'):
+        return 'you won'
+    
